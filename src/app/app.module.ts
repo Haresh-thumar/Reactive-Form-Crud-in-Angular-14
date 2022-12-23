@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NgToastModule } from 'ng-angular-popup';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    NgToastModule
+    NgToastModule,
+    NgbModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
