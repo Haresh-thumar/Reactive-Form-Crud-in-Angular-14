@@ -1,0 +1,28 @@
+.nav-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav-container a {
+  color: #fff;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.right-content {
+  display: inline;
+  float: right;
+}
+
+.right-content button {
+  margin: 0 7px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.outer-outlet-body {
+  margin: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(200, 200, 200);
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}

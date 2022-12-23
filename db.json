@@ -1,0 +1,39 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "student 1",
+      "email": "student1@gmail.com",
+      "age": 18,
+      "mobile": 9988774455
+    },
+    {
+      "id": 2,
+      "name": "student 2",
+      "email": "student2@gmail.com",
+      "age": 20,
+      "mobile": 1122334455
+    },
+    {
+      "id": 3,
+      "name": "student 3",
+      "email": "student3@gmail.com",
+      "age": 22,
+      "mobile": 6655448822
+    },
+    {
+      "id": 4,
+      "name": "student 4",
+      "email": "student4@gmail.com",
+      "age": 24,
+      "mobile": 2233881199
+    },
+    {
+      "id": 5,
+      "name": "student 5",
+      "email": "student5@gmail.com",
+      "age": 28,
+      "mobile": 3377559911
+    }
+  ]
+}

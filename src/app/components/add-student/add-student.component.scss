@@ -1,0 +1,83 @@
+.example-form {
+  max-width: 700px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mat-form-field {
+  margin-top: 8px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.error-row {
+  margin: -20px 0 10px 0;
+}
+
+.error-msg-text {
+  color: #dc4c64 !important;
+  font-size: 13px !important;
+}
+
+.length-text {
+  font-size: 13px !important;
+  color: #afafaf;
+  float: right !important;
+  margin: -19px 5px 0 0;
+}
+
+.add-Student-btn {
+  margin-top: 10px;
+}
+
+// .mat-form-field ::ng-deep .mat-form-field-outline-start:hover,
+// .mat-form-field ::ng-deep .mat-form-field-outline-gap:hover,
+// .mat-form-field ::ng-deep .mat-form-field-outline-end:hover {
+//   border-width: 1px !important;
+//   border-color: rgb(255, 0, 221) !important;
+// }
+
+
+// /* To change mat form field border color */
+// :host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+//   color:green;
+// }
+// /* To change mat form field border color on focus */
+// :host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+//   color: green;
+// }
+
+
+
+/* To change mat form field border color */
+::ng-deep .ng-valid.ng-dirty,
+.mat-form-field-appearance-outline:not(form) {
+  border-color: rgb(0, 206, 0);
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline.ng-valid.ng-dirty:not(form) {
+  border-color: lightcoral;
+}
+
+/* To change mat form field border color on focus */
+// ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+//   color: green;
+// }
+
+
+
+// .ng-valid.ng-dirty:not(form) {
+//   border: solid 2px lightgreen;
+// }
+
+// .ng-invalid.ng-dirty:not(form), .ng-invalid:not(form).form-submitted {
+//   border: solid 2px lightcoral;
+// }

@@ -1,0 +1,71 @@
+<h2 class="h2-title">Add-Student Form</h2>
+
+<form class="example-form" [formGroup]="addStudentForm" (ngSubmit)="saveData()" novalidate>
+  <!--===================== Name =====================-->
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Enter Name</mat-label>
+    <input type="text" matInput formControlName="name" #name [ngClass]="{'form-submitted': submitted}">
+    <div>
+      <mat-hint class="length-text">{{name.value.length}} / 20</mat-hint>
+    </div>
+  </mat-form-field>
+  <!------ Name-Validation ------>
+  <div class="error-row">
+    <div *ngIf="f['name'].touched && f['name'].invalid || f['name'].dirty" class="error-msg-text">
+      <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+      <div *ngIf="f['name'].errors && f['name'].errors['maxlength']">15 character Limit.</div>
+    </div>
+  </div>
+
+
+  <!--===================== Email =====================-->
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Enter Email</mat-label>
+    <input type="email" matInput formControlName="email">
+  </mat-form-field>
+  <!------ Email-Validation ------>
+  <div class="error-row">
+    <div *ngIf="f['email'].touched && f['email'].invalid || f['email'].dirty" class="error-msg-text">
+      <div *ngIf="f['email'].errors && f['email'].errors['required']">email is required.</div>
+      <div *ngIf="f['email'].errors && f['email'].errors['pattern']">enter valid email id.</div>
+    </div>
+  </div>
+
+
+  <!--===================== Age =====================-->
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Enter Age</mat-label>
+    <input type="number" matInput formControlName="age">
+  </mat-form-field>
+  <!------ Age-Validation ------>
+  <div class="error-row">
+    <div *ngIf="f['age'].touched && f['age'].invalid || f['age'].dirty" class="error-msg-text">
+      <div *ngIf="f['age'].errors && f['age'].errors['required']">age is required.</div>
+    </div>
+  </div>
+
+
+  <!--===================== Mobile =====================-->
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Enter Number</mat-label>
+    <input type="number" matInput formControlName="mobile" #mobile>
+    <div>
+      <mat-hint class="length-text">{{mobile.value.length}} / 10</mat-hint>
+    </div>
+  </mat-form-field>
+  <!------ Mobile-Validation ------>
+  <div class="error-row">
+    <div *ngIf="f['mobile'].touched && f['mobile'].invalid || f['mobile'].dirty" class="error-msg-text">
+      <div *ngIf="f['mobile'].errors && f['mobile'].errors['required']">mobile is required.</div>
+      <div *ngIf="f['mobile'].errors && f['mobile'].errors['pattern']">enter valid mobile no.</div>
+      <div *ngIf="f['mobile'].errors && f['mobile'].errors['maxlength']">15 character Limit.</div>
+    </div>
+  </div>
+
+
+  <!--===================== Submit Button =====================-->
+  <button mat-raised-button color="primary" class="add-Student-btn" [disabled]="!addStudentForm.valid" type="submit">Add
+    Student</button>
+</form>
+
+<lib-ng-toast></lib-ng-toast>

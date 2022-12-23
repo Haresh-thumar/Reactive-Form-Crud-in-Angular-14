@@ -1,0 +1,31 @@
+<h2 class="h2-title">list-student works!</h2>
+
+<!----------- Print Data in Table ---------->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Country</th>
+      <th scope="col">email</th>
+      <th scope="col">Age</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let studentData of allStudent;">
+      <td>{{studentData.id}}</td>
+      <td>{{ studentData.name }}</td>
+      <td>{{ studentData.email }}</td>
+      <td>{{ studentData.age }}</td>
+      <td>{{ studentData.mobile }}</td>
+      <td class="action-btn">
+        <button mat-mini-fab color="primary"><i class="fas fa-pencil-alt"></i></button>
+        <button mat-mini-fab color="warn" (click)="deleteStudent(studentData.id)"><i class="fas fa-trash"></i></button>
+      </td>
+  </tbody>
+</table>
+
+<button mat-fab color="primary" class="addStudent-btn" routerLink="/add">
+  <i class="fas fa-plus add-btn-icon"></i>
+</button>
