@@ -13,14 +13,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let studentData of allStudent;">
+    <tr *ngFor="let studentData of allStudent; let i=index; trackBy:trackByStudentid;">
       <td>{{studentData.id}}</td>
       <td>{{ studentData.name }}</td>
       <td>{{ studentData.email }}</td>
       <td>{{ studentData.age }}</td>
       <td>{{ studentData.mobile }}</td>
       <td class="action-btn">
-        <button mat-mini-fab color="primary"><i class="fas fa-pencil-alt"></i></button>
+        <button mat-mini-fab color="primary" (click)="editStudent(studentData.id)" routerLink="/add/{{studentData.id}}"><i class="fas fa-pencil-alt"></i></button>
         <button mat-mini-fab color="warn" (click)="deleteStudent(studentData.id)"><i class="fas fa-trash"></i></button>
       </td>
   </tbody>

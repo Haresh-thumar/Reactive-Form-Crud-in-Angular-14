@@ -20,8 +20,18 @@ export class StudentService {
     return this.http.post(this.getUrl, data);
   }
 
+  /* Put Student Methods */
+  upateStudent(id: number, data: any) {
+    return this.http.put(`${this.getUrl}/${id}`, data);
+  }
+
   /* Delete Student Methods */
-  deleteStudent(id: any) {
+  deleteStudent(id: number) {
     return this.http.delete(`${this.getUrl}/${id}`);
+  }
+
+  /* Get Student Id By URL Methods */
+  getStudentById(id: number) {
+    return this.http.get(`${this.getUrl}/${id}`);
   }
 }

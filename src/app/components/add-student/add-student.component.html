@@ -1,6 +1,7 @@
 <h2 class="h2-title">Add-Student Form</h2>
+<h2 class="h2-title">Update-Student Form</h2>
 
-<form class="example-form" [formGroup]="addStudentForm" (ngSubmit)="saveData()" novalidate>
+<form class="example-form"  [formGroup]="addStudentForm" (ngSubmit)="saveData()" novalidate>
   <!--===================== Name =====================-->
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Enter Name</mat-label>
@@ -64,8 +65,8 @@
 
 
   <!--===================== Submit Button =====================-->
-  <button mat-raised-button color="primary" class="add-Student-btn" [disabled]="!addStudentForm.valid" type="submit">Add
-    Student</button>
+  <button mat-raised-button color="primary" class="add-Student-btn" *ngIf="updateStudent" [disabled]="!addStudentForm.valid" type="submit">Add Student</button>
+  <button mat-raised-button color="accent" class="add-Student-btn" *ngIf="!updateStudent" type="submit">Update Student</button>
 </form>
 
 <lib-ng-toast></lib-ng-toast>
