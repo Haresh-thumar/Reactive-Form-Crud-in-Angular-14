@@ -1,7 +1,7 @@
-<h2 class="h2-title">Add-Student Form</h2>
-<h2 class="h2-title">Update-Student Form</h2>
+<h2 *ngIf="!isEdit" class="h2-title">Add-Student Form</h2>
+<h2 *ngIf="isEdit" class="h2-title">Update-Student Form</h2>
 
-<form class="example-form"  [formGroup]="addStudentForm" (ngSubmit)="saveData()" novalidate>
+<form class="example-form" [formGroup]="addStudentForm" novalidate>
   <!--===================== Name =====================-->
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Enter Name</mat-label>
@@ -64,9 +64,14 @@
   </div>
 
 
-  <!--===================== Submit Button =====================-->
-  <button mat-raised-button color="primary" class="add-Student-btn" *ngIf="updateStudent" [disabled]="!addStudentForm.valid" type="submit">Add Student</button>
-  <button mat-raised-button color="accent" class="add-Student-btn" *ngIf="!updateStudent" type="submit">Update Student</button>
+  <!--===================== Submit || Update || Cancel Button =====================-->
+  <div class="update-btn">
+    <button mat-raised-button color="primary" class="add-Student-btn" *ngIf="!isEdit" [disabled]="!addStudentForm.valid"
+      type="submit" (click)="postStudent()">Add Student</button>
+    <button *ngIf="isEdit" mat-raised-button color="primary" class="add-Student-btn" (click)="putStudent()">Update
+      Student</button>
+    <button mat-raised-button color="warn" class="add-Student-btn" (click)="cancelEdit()">cancel</button>
+  </div>
 </form>
 
 <lib-ng-toast></lib-ng-toast>

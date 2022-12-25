@@ -20,7 +20,8 @@
       <td>{{ studentData.age }}</td>
       <td>{{ studentData.mobile }}</td>
       <td class="action-btn">
-        <button mat-mini-fab color="primary" (click)="editStudent(studentData.id)" routerLink="/add/{{studentData.id}}"><i class="fas fa-pencil-alt"></i></button>
+        <button mat-mini-fab color="primary" routerLink="/update/{{studentData.id}}"><i
+            class="fas fa-pencil-alt"></i></button>
         <button mat-mini-fab color="warn" (click)="deleteStudent(studentData.id)"><i class="fas fa-trash"></i></button>
       </td>
   </tbody>

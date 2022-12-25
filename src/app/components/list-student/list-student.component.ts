@@ -37,26 +37,10 @@ export class ListStudentComponent implements OnInit {
   deleteStudent(delStu: any) {
     this.student.deleteStudent(delStu).subscribe({
       next: (res) => { return res },
-      error: (err) => this.toast.error({ detail: "DELETE ERROR", summary: 'Delete Student UnSuccessfull!', duration: 4000, position: 'br' }),
+      error: (err) => this.toast.error({ detail: "DELETE DELETE", summary: 'Delete Student UnSuccessfull!', duration: 4000, position: 'br' }),
       complete: () => {
         this.getAllStudent();
         this.toast.success({ detail: "DELETE STUDENT", summary: 'Delete Student Successfully!', duration: 3000, position: 'br' });
-      },
-    })
-  }
-
-  /****************** Edit Data ******************/
-  editStudent(editStu: any) {
-    console.log("==============", this.allStudent.value);
-    this.student.upateStudent(this.allStudent.value, editStu.id).subscribe({
-      next: (res) => { return res },
-      error: (err) => this.toast.error({ detail: "DELETE ERROR", summary: 'Delete Student UnSuccessfull!', duration: 4000, position: 'br' }),
-      complete: () => {
-        this.toast.success({ detail: "UPDATE STUDENT", summary: 'Update Student Successfully!', duration: 3000, position: 'br' });
-        setTimeout(() => {
-          this.getAllStudent();
-        }, 5000);
-        this.allStudent.reset();
       },
     })
   }
