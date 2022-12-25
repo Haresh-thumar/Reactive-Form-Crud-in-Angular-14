@@ -11,3 +11,7 @@
 .add-btn-icon {
   font-size: 20px;
 }
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: red;
+}

@@ -5,10 +5,18 @@ import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-list-student',
   templateUrl: './list-student.component.html',
-  styleUrls: ['./list-student.component.scss']
+  styleUrls: ['./list-student.component.scss'],
 })
 export class ListStudentComponent implements OnInit {
 
+  //Add pagination in Table
+  POSTS: any;
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 7;
+  tableSizes: any = [5, 10, 15, 25, 50];
+
+  // JSON Data store in Object
   allStudent: any = [];
 
   constructor(private student: StudentService, private toast: NgToastService) { }
@@ -17,8 +25,21 @@ export class ListStudentComponent implements OnInit {
     this.getAllStudent();
   }
 
+  //Pagination Function
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.getAllStudent();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getAllStudent();
+  }
 
-  /******************* Get Data *******************/
+
+  /**************************************************************************************
+                                      Get Student
+  **************************************************************************************/
   getAllStudent() {
     this.student.getStudents().subscribe({
       next: (result) => { this.allStudent = result },
@@ -31,7 +52,10 @@ export class ListStudentComponent implements OnInit {
     });
   }
 
-  /****************** Delete Data ******************/
+
+  /**************************************************************************************
+                                      Delete Student
+  **************************************************************************************/
   deleteStudent(delStu: any) {
     this.student.deleteStudent(delStu).subscribe({
       next: (res) => { return res },
@@ -43,9 +67,11 @@ export class ListStudentComponent implements OnInit {
     })
   }
 
-
+  /************* TrackBy For Loop Function ***********/
   trackByStudentid(index: number, student: any): string {
     return student.studentId;
   }
 
 }
+
+

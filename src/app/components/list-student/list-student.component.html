@@ -13,7 +13,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let studentData of allStudent; let i=index; trackBy:trackByStudentid;">
+    <tr class="align-middle"
+      *ngFor="let studentData of allStudent | paginate : { itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i=index; trackBy:trackByStudentid;">
       <td>{{studentData.id}}</td>
       <td>{{ studentData.name }}</td>
       <td>{{ studentData.email }}</td>
@@ -26,6 +27,12 @@
       </td>
   </tbody>
 </table>
+
+<div class="d-flex justify-content-end">
+  <pagination-controls class="my-pagination" previousLabel="Prev" nextLabel="Next"
+    (pageChange)="onTableDataChange($event)">
+  </pagination-controls>
+</div>
 
 <button mat-fab color="primary" class="addStudent-btn" routerLink="/add">
   <i class="fas fa-plus add-btn-icon"></i>
