@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../service/student.service';
 import { NgToastService } from 'ng-angular-popup';
-import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-student',
@@ -13,7 +11,7 @@ export class ListStudentComponent implements OnInit {
 
   allStudent: any = [];
 
-  constructor(private student: StudentService, private toast: NgToastService, private route: Router) { }
+  constructor(private student: StudentService, private toast: NgToastService) { }
 
   ngOnInit(): void {
     this.getAllStudent();

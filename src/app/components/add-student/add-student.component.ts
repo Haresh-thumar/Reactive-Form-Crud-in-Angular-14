@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { StudentService } from '../service/student.service';
-import { first } from 'rxjs';
 
 @Component({
   selector: 'app-add-student',
@@ -90,7 +89,9 @@ export class AddStudentComponent implements OnInit {
                                       Edit Student
   **************************************************************************************/
   putStudent() {
+    /*-------- find id in url --------*/
     this.userId = this.router.snapshot.paramMap.get('id');
+
     this.api.upateStudent(this.userId, this.addStudentForm.value).subscribe({
       next: (result) => {
         console.log(result);
