@@ -53,10 +53,8 @@ export class AddStudentComponent implements OnInit {
   }
 
 
-  /*========== Get Form-Controls For HTML File Validation ==========*/
-  get f(): { [key: string]: AbstractControl } {
-    return this.addStudentForm.controls;
-  }
+  /*========== convenience getter for easy access to form fields ==========*/
+  get f() { return this.addStudentForm.controls; }
 
 
   /**************************************************************************************
