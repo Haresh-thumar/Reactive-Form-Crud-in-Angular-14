@@ -14,7 +14,7 @@
     </div>
   </div>
 </mat-toolbar>
-
+<app-loader *ngIf="loaderservice.loader"></app-loader>
 <section class="outer-outlet-body">
   <router-outlet></router-outlet>
   <lib-ng-toast></lib-ng-toast>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../service/student.service';
 import { NgToastService } from 'ng-angular-popup';
+import { LoaderService } from '../../shared/utilities/loader/services/loader.service';
 
 @Component({
   selector: 'app-list-student',
@@ -19,7 +20,7 @@ export class ListStudentComponent implements OnInit {
   // JSON Data store in Object
   allStudent: any = [];
 
-  constructor(private student: StudentService, private toast: NgToastService) { }
+  constructor(private student: StudentService, private toast: NgToastService, public loader: LoaderService) { }
 
   ngOnInit(): void {
     this.getAllStudent();
@@ -41,15 +42,19 @@ export class ListStudentComponent implements OnInit {
                                       Get Student
   **************************************************************************************/
   getAllStudent() {
+    this.loader.loader = true;
+   setTimeout(() => {
     this.student.getStudents().subscribe({
       next: (result) => { this.allStudent = result },
       error: (err) => this.toast.error({ detail: "STUDENT FETCH FAILED", summary: 'Student Data Fetching Failed!', duration: 4000, position: 'br' }),
       complete: () => {
+        this.loader.loader = false;
         if (this.allStudent > 0) {
           this.toast.success({ detail: "STUDENT FETCH", summary: 'Student Data Fetch Successfully!', duration: 3000, position: 'br' });
         }
       },
     });
+   }, 5000);
   }
 
 

@@ -16,12 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoaderComponent } from './shared/utilities/loader/loader.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddStudentComponent,
-    ListStudentComponent
+    ListStudentComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatIconModule,
     NgToastModule,
     NgbModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatProgressBarModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
