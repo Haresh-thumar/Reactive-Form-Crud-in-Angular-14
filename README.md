@@ -11,7 +11,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   <li>ng-angular-popup (toast)</li>
   <li>json-server</li>
   <li>font-awesome 6 pro icon</li>
-  <li>Custom Loader Service</li>
+  <li>Custom Loader Uitility Service</li>
 </ul>
 
 <br>
